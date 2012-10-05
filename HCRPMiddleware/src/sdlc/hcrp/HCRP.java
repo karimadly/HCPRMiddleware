@@ -17,7 +17,9 @@ public class HCRP {
 	
 	public void createUser(String username){
 		UserDAO user = new UserDAO(sessionFactory.getSessionFactory());
-		user.createUser(username);
+		
 		
 	}
+	
+	
 }
