@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import sdlc.hcrp.HCRP;
 import sdlc.hcrp.businessdomain.User;
-import sdlc.hcrp.dao.UserDAO;
 import sdlc.hcrp.factories.HibernateSessionFactory;
 
 
@@ -28,7 +27,7 @@ public class Test {
 
 		 HCRP test =  ctx.getBean("hcrpSystem",HCRP.class);
 		
-		 test.createUser("teeest");
+	
 
 		
 		 }

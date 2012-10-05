@@ -3,7 +3,7 @@ package sdlc.hcrp;
 
 import org.hibernate.SessionFactory;
 
-import sdlc.hcrp.dao.UserDAO;
+
 import sdlc.hcrp.factories.HibernateSessionFactory;
 
 
@@ -15,11 +15,7 @@ public class HCRP {
 		this.sessionFactory = sessionFactory; 
 	}
 	
-	public void createUser(String username){
-		UserDAO user = new UserDAO(sessionFactory.getSessionFactory());
-		
-		
-	}
+	
 	
 	
 }
