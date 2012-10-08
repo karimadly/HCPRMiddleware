@@ -16,5 +16,9 @@
 <property name="hibernate.current_session_context_class">thread</property>
 
 <mapping class="sdlc.hcrp.businessdomain.User" />
+<mapping class="sdlc.hcrp.businessdomain.Client" />
+<mapping class="sdlc.hcrp.businessdomain.Group" />
+<mapping class="sdlc.hcrp.businessdomain.Member" />
+<mapping class="sdlc.hcrp.businessdomain.ContractHolder" />
 </session-factory>
 </hibernate-configuration>

@@ -14,7 +14,10 @@ import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
 
+
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table (name= "tblclients")
@@ -24,26 +27,29 @@ public class Client {
 	@GeneratedValue
 	@Column(name = "clId")
 	private int id;
-	
 	@ManyToOne
 	@JoinColumn(name="clMgr")
-	private int clientManager;
+	private User clientManager;
 	@Column(name="clNm")
 	private String clientName;
 	@Column(name="ClRm")
 	private int renewalMont;
-	@OneToMany(mappedBy="client", fetch = FetchType.EAGER)	
+	@OneToMany(mappedBy="client")
 	private Set<Group> groups;
+	
+	public Client(){
+		
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getClientManager() {
+	public User getClientManager() {
 		return clientManager;
 	}
-	public void setClientManager(int clientManager) {
+	public void setClientManager(User clientManager) {
 		this.clientManager = clientManager;
 	}
 	public String getClientName() {
@@ -64,6 +70,25 @@ public class Client {
 	public void setGroups(Set<Group> groups) {
 		this.groups = groups;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return id == ((Client)obj).id ? true:false;
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		String temp = Integer.toString(id);
+		return temp.hashCode();
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "ClientID: " + id +"\n ClientName: "+ clientName;
+	}
+	
+	
 	
 	
 }
